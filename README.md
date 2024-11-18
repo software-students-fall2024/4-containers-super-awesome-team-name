@@ -16,7 +16,19 @@ Our project is an audio-based recognition system for activity. It's designed to 
 
 ## Configuration Instructions
 
-TODO
+First download Docker Desktop.
+
+Then, run Docker Desktop and type in this command into the terminal:
+
+'''
+>>>docker-compose up --build
+'''
+
+Then go to:
+http://localhost:5000/
+
+If you are using mac, you might need to disable airplay reciever as described here:
+https://forums.developer.apple.com/forums/thread/682332
 
 ## Environment Vars and Data Import Instructions
 
