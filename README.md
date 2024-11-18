@@ -20,9 +20,9 @@ First download Docker Desktop.
 
 Then, run Docker Desktop and type in this command into the terminal:
 
-'''
->>>docker-compose up --build
-'''
+```
+>>> docker-compose up --build
+```
 
 Then go to:
 http://localhost:5000/
