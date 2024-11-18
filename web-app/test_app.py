@@ -8,7 +8,7 @@ from app import app
 
 
 @pytest.fixture
-def client():
+def setup_client():
     """Create a test client for the Flask app."""
     with app.test_client() as client:
         yield client
