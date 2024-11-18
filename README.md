@@ -41,5 +41,7 @@ TODO
     - (https://discuss.pytorch.org/t/mfcc-extracterted-by-librosa-pytorch/161180)-
     - (https://realpython.com/python-mock-library/)
     - (https://testdriven.io/blog/flask-pytest/)
-    - (https://flask.palletsprojects.com/en/stable/config/)
+    - (https://flask.palletsprojects.com/en/stable)
     - (https://pytest-with-eric.com/mocking/pytest-mock-assert-called/)
+    - (https://www.geeksforgeeks.org/pytest-tutorial-testing-python-application-using-pytest/)
+    - (https://www.skillreactor.io/learn/unit-testing-in-backend-development/unit-testing-in-python-with-flask-and-pytest)
