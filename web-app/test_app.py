@@ -2,9 +2,9 @@
 Unit tests for app.py web app.
 """
 
+from unittest import mock
 import pytest
 from app import app, collection
-from unittest import mock
 
 
 @pytest.fixture
