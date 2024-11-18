@@ -16,10 +16,14 @@ Our project is an audio-based recognition system for activity. It's designed to 
 
 ## Configuration Instructions
 
-First download Docker Desktop.
+First download Docker Desktop at:
+https://www.docker.com/products/docker-desktop/
 
-Then, run Docker Desktop and type in this command into the terminal:
+After installing Docker and restarting computer, make sure Docker Desktop is running.
 
+Then clone the GitHub respository onto your local machine.
+
+Open terminal in local cloned repository and run the following command:
 ```
 >>> docker-compose up --build
 ```
@@ -31,10 +35,6 @@ If you are using mac, you might need to disable airplay reciever as described he
 https://forums.developer.apple.com/forums/thread/682332
 
 ## Environment Vars and Data Import Instructions
-
-TODO
-
-## .env File Creation (If Necessary)
 
 TODO
 
