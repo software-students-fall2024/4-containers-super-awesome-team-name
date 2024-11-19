@@ -16,14 +16,21 @@ Our project is an audio-based recognition system for activity. It's designed to 
 
 ## Configuration Instructions
 
-First download Docker Desktop at:
+Make sure you have Python 3.x downloaded from here:
+https://www.python.org/downloads/
+
+Then, download Docker Desktop at:
 https://www.docker.com/products/docker-desktop/
 
 After installing Docker and restarting computer, make sure Docker Desktop is running.
 
-Then clone the GitHub respository onto your local machine.
+Then clone the GitHub respository onto your local machine with:
 
-Open terminal in local cloned repository and run the following command:
+```
+>>> git clone https://github.com/software-students-fall2024/4-containers-super-awesome-team-name
+```
+
+Open terminal in local cloned repository (path/to/4-containers-super-awesome-team-name) and run the following command:
 ```
 >>> docker-compose up --build
 ```
@@ -49,6 +56,8 @@ In the recording page, there is a button back to home page and a button to take 
 The user can then see all previous sounds that where classified, the classification of the sound, and the date the sound was recorded.
 
 If the user wishes to do so, they can delete any sounds from the "Records" page using the delete button next to the sound.
+
+All data will be stored in docker remotely and will be retrieved upon launch of application. If user wishes for something to be deleted, they must delete through the "Records" page.
 
 ## Environment Vars and Data Import Instructions
 
