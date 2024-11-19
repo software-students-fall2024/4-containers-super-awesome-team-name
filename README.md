@@ -59,6 +59,10 @@ If the user wishes to do so, they can delete any sounds from the "Records" page 
 
 All data will be stored in docker remotely and will be retrieved upon launch of application. If user wishes for something to be deleted, they must delete through the "Records" page.
 
+## Optional Modification
+
+This application can be used to classify more than just snaps, claps, and hits. To make the application classify any sounds of your choosing, input training data in .wav format into machine-learning-client/training_data. This will replace the training data for the back end machine learning with the sound of your choosing. To change the output syntax and classification names on the front end web application, further modification of variable names in web-app/templates and machine-learning-client/main.py will have to be done.
+
 ## Environment Vars and Data Import Instructions
 
 TODO
