@@ -28,11 +28,27 @@ Open terminal in local cloned repository and run the following command:
 >>> docker-compose up --build
 ```
 
-Then go to:
+Wait for build to finish then go to:
 http://localhost:5000/
 
 If you are using mac, you might need to disable airplay reciever as described here:
 https://forums.developer.apple.com/forums/thread/682332
+
+## Usage
+
+The website will default to the home screen with an "Analyze Sound" button and "Records" button.
+
+Analyze Sound takes user to a screen where the application will pick up sounds from user microphone (make sure microphone access is given).
+
+When the circle under Tap to Listen is red, the app is not recording sound. Click the circle once and record a sound.
+
+After finishing recording, tap the circle again and wait for the backend machine to classify the sound.
+
+In the recording page, there is a button back to home page and a button to take user to "Records" page which is a history of user activity.
+
+The user can then see all previous sounds that where classified, the classification of the sound, and the date the sound was recorded.
+
+If the user wishes to do so, they can delete any sounds from the "Records" page using the delete button next to the sound.
 
 ## Environment Vars and Data Import Instructions
 
