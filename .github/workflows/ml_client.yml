@@ -1,4 +1,4 @@
-name: CI / CD
+name: ML Client CI / CD
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.10", "3.11"]
+        python-version: ["3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@v4
 
@@ -21,13 +21,26 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
+    - name: Install portaudio
       run: |
-        python -m pip install --upgrade pip
-        pip install pipenv
-        pipenv install --dev
+        sudo apt-get update
+        sudo apt-get install -y portaudio19-dev
 
-    # - name: Start/Run the tests
-    #   run: |
-    #     cd machine-learning-client
-    #     pipenv run pytest
+    - name: Install Dependencies
+      run: |
+          python -m venv venv
+          venv/bin/pip install --upgrade pip
+          venv/bin/pip install -r machine-learning-client/requirements.txt
+          venv/bin/pip install pytest pytest-cov pylint
+
+    - name: List Installed Packages
+      run: |
+          venv/bin/pip list
+
+    - name: Run linting
+      run: |
+          venv/bin/python -m pylint machine-learning-client
+
+    - name: Run tests with coverage
+      run: |
+          venv/bin/python -m pytest machine-learning-client/test_main.py --cov=machine-learning-client/main --cov-report=html
