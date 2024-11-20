@@ -81,7 +81,7 @@ To change the output syntax and classification names on the front end web applic
 - The structure of docker-compose.yaml and our Dockerfile are based on the examples we were given in class: [Class Notes](https://knowledge.kitchen/content/courses/software-engineering/notes/containers/)
 - When writing the tests, these sources were helpful to figure out mock methods, mock.patch, Flask config testing, and also just how the assertions should look 
     - [Librosa Package](https://librosa.org/doc/0.8.1/index.html#id1)
-    - [Librosa Package](https://discuss.pytorch.org/t/mfcc-extracterted-by-librosa-pytorch/161180)-
+    - [More of the Librosa Package](https://discuss.pytorch.org/t/mfcc-extracterted-by-librosa-pytorch/161180)
     - [Python Mock](https://realpython.com/python-mock-library/)
     - [Flask Pytest](https://testdriven.io/blog/flask-pytest/)
     - [Flask Guide](https://flask.palletsprojects.com/en/stable)
