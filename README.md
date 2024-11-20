@@ -69,10 +69,6 @@ This will replace the training data for the back end machine learning with the s
 
 To change the output syntax and classification names on the front end web application, further modification of variable names in web-app/templates and machine-learning-client/main.py will have to be done.
 
-## Environment Vars and Data Import Instructions
-
-TODO
-
 ## Team members
 
 - [Darren Zou](https://github.com/darrenzou)
@@ -84,11 +80,11 @@ TODO
 
 - The structure of docker-compose.yaml and our Dockerfile are based on the examples we were given in class (https://knowledge.kitchen/content/courses/software-engineering/notes/containers/)
 - When writing the tests, these sources were helpful to figure out mock methods, mock.patch, Flask config testing, and also just how the assertions should look 
-    - (https://librosa.org/doc/0.8.1/index.html#id1)
-    - (https://discuss.pytorch.org/t/mfcc-extracterted-by-librosa-pytorch/161180)-
-    - (https://realpython.com/python-mock-library/)
-    - (https://testdriven.io/blog/flask-pytest/)
-    - (https://flask.palletsprojects.com/en/stable)
-    - (https://pytest-with-eric.com/mocking/pytest-mock-assert-called/)
-    - (https://www.geeksforgeeks.org/pytest-tutorial-testing-python-application-using-pytest/)
-    - (https://www.skillreactor.io/learn/unit-testing-in-backend-development/unit-testing-in-python-with-flask-and-pytest)
+    - [Librosa Package](https://librosa.org/doc/0.8.1/index.html#id1)
+    - [Librosa Package](https://discuss.pytorch.org/t/mfcc-extracterted-by-librosa-pytorch/161180)-
+    - [Python Mock](https://realpython.com/python-mock-library/)
+    - [Flask Pytest](https://testdriven.io/blog/flask-pytest/)
+    - [Flask Guide](https://flask.palletsprojects.com/en/stable)
+    - [Pytest Mock Assert](https://pytest-with-eric.com/mocking/pytest-mock-assert-called/)
+    - [Pytest Tutorial](https://www.geeksforgeeks.org/pytest-tutorial-testing-python-application-using-pytest/)
+    - [Unit Testing](https://www.skillreactor.io/learn/unit-testing-in-backend-development/unit-testing-in-python-with-flask-and-pytest)
