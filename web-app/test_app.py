@@ -16,16 +16,16 @@ def app_client():
 
 def test_index_route(app_client):
     """Test the index route."""
-    response = app_client.get("/")
-    assert response.status_code == 200
-    assert b"Sound Analyzer" in response.data
+    res = app_client.get("/")
+    assert res.status_code == 200
+    assert b"Sound Analyzer" in res.data
 
 
 def test_analyze_route(app_client):
     """Test the analyze route."""
-    response = app_client.get("/analyze")
-    assert response.status_code == 200
-    assert b"Tap to Listen" in response.data
+    res = app_client.get("/analyze")
+    assert res.status_code == 200
+    assert b"Tap to Listen" in res.data
 
 
 @mock.patch("app.collection.insert_one")
@@ -34,19 +34,19 @@ def test_save_result(mock_insert_one, app_client):
 
     # mocking the data, see ackowledgements in the README
     mock_data = {"classification": "clapping", "timestamp": "2024-11-17T12:00:00"}
-    response = app_client.post("/save_result", json=mock_data)
-    assert response.status_code == 200
-    assert response.json["status"] == "success"
+    res = app_client.post("/save_result", json=mock_data)
+    assert res.status_code == 200
+    assert res.json["status"] == "success"
     mock_insert_one.assert_called_once_with(mock_data)
 
 
 @mock.patch("app.collection.insert_one")
 def test_save_result_no_data(mock_insert_one, app_client):
     """Test saving classification result but with no data."""
-    response = app_client.post("/save_result", json={})
-    assert response.status_code == 400
-    assert response.json["status"] == "error"
-    assert "No data received" in response.json["message"]
+    res = app_client.post("/save_result", json={})
+    assert res.status_code == 400
+    assert res.json["status"] == "error"
+    assert "No data received" in res.json["message"]
 
     # assertion for the mock, see ackowledgements in the README
     mock_insert_one.assert_not_called()
@@ -60,24 +60,24 @@ def test_results_route(mock_find, app_client):
     mock_find.return_value = [
         {"_id": "1", "classification": "clapping", "timestamp": "2024-11-17T12:00:00"}
     ]
-    response = app_client.get("/results")
-    assert response.status_code == 200
-    assert b"Classification Result" in response.data
+    res = app_client.get("/results")
+    assert res.status_code == 200
+    assert b"Classification Result" in res.data
 
 
 @mock.patch("app.collection.delete_one")
 @mock.patch("app.ObjectId")
-def test_delete_result(mock_object_id, mock_delete_one, app_client):
+def test_delete_result(mock_id, mock_delete_one, app_client):
     """Test to delete a classification result."""
     # Generic obj ID
     result_id = "507f1f77bcf86cd799439011"
     # mock return, see ackowledgements in the README
-    mock_object_id.return_value = result_id
+    mock_id.return_value = result_id
 
-    response = app_client.post(f"/delete_result/{result_id}")
+    res = app_client.post(f"/delete_result/{result_id}")
     # Redirect
-    assert response.status_code == 302
+    assert res.status_code == 302
 
     # assertions for the mocks, see ackowledgements in the README
-    mock_object_id.assert_called_once_with(result_id)
+    mock_id.assert_called_once_with(result_id)
     mock_delete_one.assert_called_once_with({"_id": result_id})
