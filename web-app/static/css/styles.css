@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: #2c3e50;
+    font-size: 2.5em;
+}
+
+/* Navigation and Buttons */
+.navigation, .button-container {
+    margin: 20px;
+}
+
+.navigation a, .button-container a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover, .button-container a:hover {
+    background-color: #2980b9;
+}
+
+/* Red Circle Button (Analyze Page) */
+.red-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.red-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Table Styles */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table td:first-child {
+    text-transform: capitalize;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Buttons within tables */
+button {
+    padding: 8px 16px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Result Text */
+#result {
+    margin: 20px auto;
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+}

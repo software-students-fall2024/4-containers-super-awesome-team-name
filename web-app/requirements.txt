@@ -1,0 +1,8 @@
+Flask
+pymongo
+pytest
+pytest-cov
+pytest-flask
+pylint
+flask-cors
+pydub

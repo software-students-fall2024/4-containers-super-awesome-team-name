@@ -1,4 +1,4 @@
-name: CI / CD
+name: ML Client CI / CD
 
 on:
   push:
@@ -29,28 +29,18 @@ jobs:
     - name: Install Dependencies
       run: |
           python -m venv venv
-          source venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r machine-learning-client/requirements.txt
-          pip install pytest pytest-cov pylint
-      
-    - name: Start the Tests
-      env:
-          PYTHONPATH: machine-learning-client
+          venv/bin/pip install --upgrade pip
+          venv/bin/pip install -r machine-learning-client/requirements.txt
+          venv/bin/pip install pytest pytest-cov pylint
+
+    - name: List Installed Packages
       run: |
-          source venv/bin/activate
-          python -m pytest --cov=machine-learning-client/main --cov-report=html
-    
+          venv/bin/pip list
+
     - name: Run linting
-      env:
-          PYTHONPATH: machine-learning-client
       run: |
-          source venv/bin/activate
-          pylint machine-learning-client/tests
-    
+          venv/bin/python -m pylint machine-learning-client
+
     - name: Run tests with coverage
-      env:
-          PYTHONPATH: machine-learning-client
       run: |
-          source venv/bin/activate
-          python -m pytest --cov=machine-learning-client/main --cov-report=html
+          venv/bin/python -m pytest machine-learning-client/test_main.py --cov=machine-learning-client/main --cov-report=html
